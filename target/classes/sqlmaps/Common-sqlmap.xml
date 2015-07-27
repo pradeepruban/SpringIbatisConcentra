@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.00//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.syntel.syntbots.itops.dao.CommonDAO">	
+	<resultMap id="exportMap" type="map">
+	</resultMap>
+	<resultMap id="searchMap" type="map">
+	</resultMap>
+	<resultMap id="rsMap" type="map">
+	</resultMap>
+	<select id="getNumberByExecutingQuery" parameterType="map" resultType="map"
+		statementType="CALLABLE">
+		{call PKG_SCMN_COMMON.USP_GET_NUMBER_EXEC_QUERY(#{SqlQuery,jdbcType=VARCHAR,mode=IN},#{ResultOutput,javaType=java.lang.Long,jdbcType=NUMERIC,mode=OUT})}
+	</select>	
+</mapper>

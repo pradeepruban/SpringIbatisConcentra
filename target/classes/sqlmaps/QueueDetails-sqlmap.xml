@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.00//EN"
+"http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.syntel.syntbots.itops.dao.QueueDtlsDAO">
+	<resultMap id="queueDetailsMap" type="QueueDetails">
+	</resultMap>	
+	<insert id="addQueue" parameterType="Customer"
+		statementType="CALLABLE">
+		{call
+		VCT.PKG_CRM_CUSTOMERS.USP_I_CRM_CUSTOMERS(#{ccrsCustomerId,mode=OUT,jdbcType=VARCHAR},#{ccrsUserCode,jdbcType=VARCHAR},#{ccrsTitle,jdbcType=VARCHAR},#{ccrsGender,jdbcType=VARCHAR},#{ccrsFirstName,jdbcType=VARCHAR},#{ccrsMiddleName,jdbcType=VARCHAR},#{ccrsLastName,jdbcType=VARCHAR},#{ccrsFamilyName,jdbcType=VARCHAR},#{ccrsMaritalStatus,jdbcType=VARCHAR},#{ccrsMailingAddrs1,jdbcType=VARCHAR},#{ccrsMailingAddrs2,jdbcType=VARCHAR},#{ccrsMailingAddrs3,jdbcType=VARCHAR},#{ccrsMailingPostalCode,jdbcType=BIGINT},#{ccrsMailingCountry,jdbcType=VARCHAR},#{ccrsEmail1,jdbcType=VARCHAR},#{ccrsEmail2,jdbcType=VARCHAR},#{ccrsLandPhone,jdbcType=VARCHAR},#{ccrsOfficePhone,jdbcType=VARCHAR},#{ccrsMobilePhone,jdbcType=VARCHAR},#{ccrsFax,jdbcType=VARCHAR},#{ccrsCustomerCountry,jdbcType=VARCHAR},#{ccrsNationality,jdbcType=VARCHAR},#{ccrsRegion,jdbcType=VARCHAR},#{ccrsArea,jdbcType=VARCHAR},#{ccrsAgeGroup,jdbcType=VARCHAR},#{ccrsCommunity,jdbcType=VARCHAR},#{ccrsShippingAddress1,jdbcType=VARCHAR},#{ccrsShippingAddress2,jdbcType=VARCHAR},#{ccrsShippingAddress3,jdbcType=VARCHAR},#{ccrsShippingContPerson,jdbcType=VARCHAR},#{ccrsShippingPhone2,jdbcType=VARCHAR},#{ccrsShippingPhone1,jdbcType=VARCHAR},#{ccrsShippingCountry,jdbcType=VARCHAR},#{ccrsShippingPbno,jdbcType=BIGINT},#{ccrsLeadSource,jdbcType=VARCHAR},#{ccrsImageLink,jdbcType=VARCHAR},#{ccrsCustImage,jdbcType=BLOB},#{ccrsWeddingDate,jdbcType=DATE
+		},#{ccrsAccount,jdbcType=VARCHAR},#{ccrsBirthdate,jdbcType=DATE
+		},#{ccrsActive,jdbcType=VARCHAR},#{ccrsBlockedCode,jdbcType=BIGINT},#{ccrsFreezed,jdbcType=VARCHAR},#{ccrsRemarks,jdbcType=VARCHAR},#{ccrsServiceNumber,jdbcType=BIGINT},#{ccrsUpdateRemarks,jdbcType=VARCHAR},#{ccrsSubscribtion,jdbcType=VARCHAR},#{ccrsCreationDate,jdbcType=DATE
+		},#{audsCreationUserId,jdbcType=BIGINT},#{ccrsLastUpdateDate,jdbcType=DATE
+		},#{audsLastUpdateUserId,jdbcType=BIGINT},#{attribute1,jdbcType=VARCHAR},#{attribute2,jdbcType=VARCHAR},#{attribute3,jdbcType=VARCHAR},#{attribute4,jdbcType=VARCHAR},#{attribute5,jdbcType=VARCHAR},#{attribute6,jdbcType=VARCHAR},#{attribute7,jdbcType=VARCHAR},#{attribute8,jdbcType=VARCHAR},#{attribute9,jdbcType=VARCHAR},#{attribute10,jdbcType=VARCHAR},#{attribute11,jdbcType=VARCHAR},#{attribute12,jdbcType=VARCHAR},#{attribute13,jdbcType=VARCHAR},#{attribute14,jdbcType=VARCHAR},#{attribute15,jdbcType=VARCHAR},#{resattribute1,jdbcType=VARCHAR},#{resattribute2,jdbcType=VARCHAR},#{resattribute3,jdbcType=VARCHAR})}
+	</insert>
+	<update id="updateCustomer" parameterType="Customer"
+		statementType="CALLABLE">
+		{call
+		VCT.PKG_CRM_CUSTOMERS.USP_U_CRM_CUSTOMERS(#{ccrsCustomerId,jdbcType=VARCHAR},#{ccrsUserCode,jdbcType=VARCHAR},#{ccrsTitle,jdbcType=VARCHAR},#{ccrsGender,jdbcType=VARCHAR},#{ccrsFirstName,jdbcType=VARCHAR},#{ccrsMiddleName,jdbcType=VARCHAR},#{ccrsLastName,jdbcType=VARCHAR},#{ccrsFamilyName,jdbcType=VARCHAR},#{ccrsMaritalStatus,jdbcType=VARCHAR},#{ccrsMailingAddrs1,jdbcType=VARCHAR},#{ccrsMailingAddrs2,jdbcType=VARCHAR},#{ccrsMailingAddrs3,jdbcType=VARCHAR},#{ccrsMailingPostalCode,jdbcType=BIGINT},#{ccrsMailingCountry,jdbcType=VARCHAR},#{ccrsEmail1,jdbcType=VARCHAR},#{ccrsEmail2,jdbcType=VARCHAR},#{ccrsLandPhone,jdbcType=VARCHAR},#{ccrsOfficePhone,jdbcType=VARCHAR},#{ccrsMobilePhone,jdbcType=VARCHAR},#{ccrsFax,jdbcType=VARCHAR},#{ccrsCustomerCountry,jdbcType=VARCHAR},#{ccrsNationality,jdbcType=VARCHAR},#{ccrsRegion,jdbcType=VARCHAR},#{ccrsArea,jdbcType=VARCHAR},#{ccrsAgeGroup,jdbcType=VARCHAR},#{ccrsCommunity,jdbcType=VARCHAR},#{ccrsShippingAddress1,jdbcType=VARCHAR},#{ccrsShippingAddress2,jdbcType=VARCHAR},#{ccrsShippingAddress3,jdbcType=VARCHAR},#{ccrsShippingContPerson,jdbcType=VARCHAR},#{ccrsShippingPhone2,jdbcType=VARCHAR},#{ccrsShippingPhone1,jdbcType=VARCHAR},#{ccrsShippingCountry,jdbcType=VARCHAR},#{ccrsShippingPbno,jdbcType=BIGINT},#{ccrsLeadSource,jdbcType=VARCHAR},#{ccrsImageLink,jdbcType=VARCHAR},#{ccrsCustImage,jdbcType=BLOB},#{ccrsWeddingDate,jdbcType=DATE
+		},#{ccrsAccount,jdbcType=VARCHAR},#{ccrsBirthdate,jdbcType=DATE
+		},#{ccrsActive,jdbcType=VARCHAR},#{ccrsBlockedCode,jdbcType=BIGINT},#{ccrsFreezed,jdbcType=VARCHAR},#{ccrsRemarks,jdbcType=VARCHAR},#{ccrsServiceNumber,jdbcType=BIGINT},#{ccrsUpdateRemarks,jdbcType=VARCHAR},#{ccrsSubscribtion,jdbcType=VARCHAR},#{ccrsLastUpdateDate,jdbcType=DATE
+		},#{audsLastUpdateUserId,jdbcType=BIGINT},#{attribute1,jdbcType=VARCHAR},#{attribute2,jdbcType=VARCHAR},#{attribute3,jdbcType=VARCHAR},#{attribute4,jdbcType=VARCHAR},#{attribute5,jdbcType=VARCHAR},#{attribute6,jdbcType=VARCHAR},#{attribute7,jdbcType=VARCHAR},#{attribute8,jdbcType=VARCHAR},#{attribute9,jdbcType=VARCHAR},#{attribute10,jdbcType=VARCHAR},#{attribute11,jdbcType=VARCHAR},#{attribute12,jdbcType=VARCHAR},#{attribute13,jdbcType=VARCHAR},#{attribute14,jdbcType=VARCHAR},#{attribute15,jdbcType=VARCHAR},#{resattribute1,jdbcType=VARCHAR},#{resattribute2,jdbcType=VARCHAR},#{resattribute3,jdbcType=VARCHAR})}
+	</update>
+	<select id="getCustomer" parameterType="Customer" resultMap="customerMap"
+		statementType="CALLABLE">
+		{call
+		VCT.PKG_CRM_CUSTOMERS.USP_GET_CRM_CUSTOMERS(#{CcrsUserCode,jdbcType=VARCHAR,mode=IN},#{CUSTOMER_DS,javaType=java.sql.ResultSet,jdbcType=CURSOR,mode=OUT,resultMap=customerMap})}
+	</select>	
+</mapper>

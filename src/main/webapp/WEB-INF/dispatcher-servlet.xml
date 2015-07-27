@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" 	
+	xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd">
+
+<import resource="application-context.xml"/>
+
+  
+<bean class="com.syntel.syntbots.itops.controller.NotifyingExceptionResolver">
+	<property name="exceptionMappings">
+		<map>
+			<entry key="ApplicationException" value="error"/>
+			<entry key="HttpMediaTypeNotAcceptableException" value="error"/>						
+		</map>
+	</property>
+	    
+	<property name="priorityExceptionMappings">
+		<map>
+			<entry key="ApplicationException" value="High" />
+			<entry key="HttpMediaTypeNotAcceptableException" value="High" />						
+		</map>
+	</property>
+	
+	<property name="priorityNotificationServicesMappings">
+		<map>
+			<entry key="High" value-ref="emailNotificationService" />
+		</map>
+	</property>
+	
+	<property name="defaultErrorView" value="defaultError" />
+	
+</bean>
+
+
+</beans>

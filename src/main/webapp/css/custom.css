@@ -1,0 +1,7 @@
+@CHARSET "ISO-8859-1";
+
+tr.row_selected td{
+	background-color:lightblue !important;
+	}
+	
+.reqdField{ color:red; size:2;} 
